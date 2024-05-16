@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Профилирование разработчиков
+{% endblock %}
+
+
+{% block href %}{% endblock %}
+
+{% block head %}
+<a class="p-2 text-dark" href="/"> Обнулить запрос </a>
+{% endblock %}
+
+
+{% block body %}
+<center>
+  <p><h3>Введите URL разработчика</h3>
+    <form action="/url" method="post">
+       <input class="position_center borders" name="iurl" id="iurl" type="text" placeholder="Вставте нужную ссылку или хеш сюда">
+       <button type="submit" class="position_center borders">Тык!</button>
+    </form></p>
+
+
+    <p><h3>Введите ключевое слово и границу метрики Левенштейна</h3>
+    <form action="/poisk" method="post">
+        <input class="position_center borders" name="lev" id="lev" type="text" placeholder="граница метрики">
+       <input class="position_center borders" name="iword" id="iword" type="text" placeholder="ключевое слово">
+       <button type="submit" class="position_center borders">Тык!</button>
+    </form></p>
+
+    <p><h3>Наиболее подходящий разработчик</h3>
+   <a class="p-2 text-dark" href="/raz/{{ b.id }}">
+       <div class="alert alert-info">
+        <h2>Имя: {{ b.name }}</h2>
+        <h2>Место проживания: {{ b.place }}</h2>
+           <h2>Количество подходящих слов: {{ d }} </h2>
+    </div>
+       </a>
+
+
+
+</center>
+{% endblock %}

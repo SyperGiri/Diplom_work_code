@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ </head>
+ <title>{% block title %}{% endblock %}</title>
+ <body>
+ <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal" >{% block head %}{% endblock %}</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    {% block href %}<a class="p-2 text-dark" href="raz">Разработчики</a>
+    <a class="p-2 text-dark" href="bd">База данных</a>{% endblock %}
+  </nav>
+</div>
+ {% block body %}{% endblock %}
+ </body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<a class="p-2 text-dark" href="/"> На главную </a>
+{% endblock %}
+
+{% block title %}
+Профилирование разработчиков
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все разработчики</h1>
+  {% for el in b %}
+   <a class="p-2 text-dark" href="/raz/{{ el.id }}">
+       <div class="alert alert-info">
+        <h2>Имя: {{ el.name }}</h2>
+        <h2>Место проживания: {{ el.place }}</h2>
+    </div>
+       </a>
+  {% endfor %}
+
+</div>
